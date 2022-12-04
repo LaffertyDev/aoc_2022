@@ -24,10 +24,8 @@ fn main() {
 }
 
 fn parse_assignment_ranges(assignment: &str) -> (u32, u32, u32, u32) {
-    let mut split_assignments = assignment.split(',');
-    let mut a1 = split_assignments.next().unwrap().split('-');
-    let mut a2 = split_assignments.next().unwrap().split('-');
-    return (a1.next().unwrap().parse::<u32>().unwrap(), a1.next().unwrap().parse::<u32>().unwrap(), a2.next().unwrap().parse::<u32>().unwrap(), a2.next().unwrap().parse::<u32>().unwrap());
+    let mut split_assignments = assignment.split([',', '-']);
+    return (split_assignments.next().unwrap().parse::<u32>().unwrap(), split_assignments.next().unwrap().parse::<u32>().unwrap(), split_assignments.next().unwrap().parse::<u32>().unwrap(), split_assignments.next().unwrap().parse::<u32>().unwrap());
 }
 
 fn does_assignment_pair_overlap_simple(assignment_1_start: u32, assignment_1_end: u32, assignment_2_start: u32, assignment_2_end: u32) -> bool {
