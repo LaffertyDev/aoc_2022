@@ -1,13 +1,7 @@
 use std::env;
 use std::fs;
 
-// Read all lines in the input, one-by-one, adding the total number of calories until a new line is found
-// Then find the max so far, and return it
 fn main() {
-    // In case the Elves get hungry and need extra snacks, they need to know which Elf to ask:
-    // they'd like to know how many Calories are being carried by the Elf carrying the most Calories.
-    // In the example above, this is 24000 (carried by the fourth Elf).
-
     let args: Vec<String> = env::args().collect();
     let file_path = args[1].clone();
     let contents = fs::read_to_string(file_path).expect("Should have been able to read the file");
