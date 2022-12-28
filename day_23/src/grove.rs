@@ -43,7 +43,7 @@ impl Grove {
 		}
 	}
 
-	pub fn count_elves(&self) -> u32 {
+	pub fn _count_elves(&self) -> u32 {
 		let mut elves = 0;
 		for row in 0..self.grove.len() {
 			for col in 0..self.grove[row].len() {
